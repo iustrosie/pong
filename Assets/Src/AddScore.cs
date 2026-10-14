@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class AddScore : MonoBehaviour
 {
@@ -9,7 +8,12 @@ public class AddScore : MonoBehaviour
     {
         var whoScores = _ball.position.x > 0 ? "Player" : "Computer";
         Debug.Log($"Point for {whoScores}");
-        SceneManager.LoadScene(0);
+
+        GameController controller = Object.FindAnyObjectByType<GameController>();
+        if (controller != null)
+        {
+            controller.AddScore(whoScores);
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
