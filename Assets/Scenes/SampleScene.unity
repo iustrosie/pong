@@ -1688,7 +1688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _scoreText: {fileID: 2060256137}
   _winText: {fileID: 1128347293}
-  _winningScore: 2
+  _winningScore: 5
 --- !u!4 &1884753701
 Transform:
   m_ObjectHideFlags: 0

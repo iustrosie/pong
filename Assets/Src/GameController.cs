@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour
         {
             if (_isGameOver)
             {
-                // Resetujemy punkty do 0 i uruchamiamy grę od nowa
                 _playerScore = 0;
                 _computerScore = 0;
                 _isGameOver = false;
@@ -51,7 +50,7 @@ public class GameController : MonoBehaviour
             }
             else if (Time.timeScale == 0)
             {
-                Time.timeScale = 1; // Unpause / Serwis
+                Time.timeScale = 1;
                 if (_winText != null) _winText.text = "";
             }
         }
@@ -84,14 +83,4 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void EndGame(string message)
-    {
-        _isGameOver = true;
-        Time.timeScale = 0; // Zatrzymaj grę
-
-        if (_winText != null)
-        {
-            _winText.text = $"{message}\nNaciśnij SPACJĘ, aby zresetować";
-        }
-    }
 }
